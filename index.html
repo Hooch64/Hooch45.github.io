@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard Téléservices</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Référentiel des Téléservices</h1>
+
+      <select id="dgFilter">
+        <option value="">Toutes les Directions Générales</option>
+      </select>
+    </header>
+
+    <section class="kpis">
+
+      <div class="card">
+        <h2>Total</h2>
+        <span id="totalTs">0</span>
+      </div>
+
+      <div class="card success">
+        <h2>En service</h2>
+        <span id="enService">0</span>
+      </div>
+
+      <div class="card warning">
+        <h2>En développement</h2>
+        <span id="enDev">0</span>
+      </div>
+
+      <div class="card danger">
+        <h2>Fermés</h2>
+        <span id="fermes">0</span>
+      </div>
+
+    </section>
+
+    <section class="charts">
+
+      <div class="panel">
+        <h3>Répartition des statuts</h3>
+        <canvas id="statusChart"></canvas>
+      </div>
+
+      <div class="panel">
+        <h3>Répartition par directions</h3>
+        <canvas id="directionChart"></canvas>
+      </div>
+
+    </section>
+
+    <section class="table-section">
+
+      <div class="table-title">
+        Téléservices
+      </div>
+
+      <table id="teleservicesTable">
+
+        <thead>
+
+        <tr>
+          <th>Téléservice</th>
+          <th>Statut</th>
+          <th>Direction</th>
+          <th>Responsable MCO</th>
+          <th>Application</th>
+        </tr>
+
+        </thead>
+
+        <tbody></tbody>
+
+      </table>
+
+    </section>
+
+  </div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
